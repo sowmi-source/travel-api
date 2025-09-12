@@ -82,5 +82,6 @@ spec:
               service:
                 name: travel-api-service
                 port:
-                  number: 8443
+                  number: 8442
+
 
