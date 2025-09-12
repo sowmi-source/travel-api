@@ -25,7 +25,8 @@ spec:
     
   ports:
     - protocol: TCP
-      port: 8443         # Service port (HTTPS)
-      targetPort: 8443  # Container port
+      port: 8442         # Service port (HTTPS)
+      targetPort: 8442  # Container port
   type: NodePort
+
 
