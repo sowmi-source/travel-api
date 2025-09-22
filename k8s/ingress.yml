@@ -9,13 +9,14 @@ spec:
     - host: travel-api.test
       http:
         paths:
-          - path: /api
+          - path: /api/getPackages
             pathType: Prefix
             backend:
               service:
                 name: travel-api-service
                 port:
                   number: 8442
+
 
 
 
