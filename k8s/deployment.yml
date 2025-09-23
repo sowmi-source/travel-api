@@ -16,8 +16,9 @@ spec:
     spec:
       containers:
       - name: travelapi
-        image: container122333/apiimage:52
+        image: container122333/apiimage:1
 
         ports:
           - containerPort: 8442
+
 
