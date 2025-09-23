@@ -27,6 +27,10 @@ spec:
     - protocol: TCP
       port: 8442         # Service port (HTTPS)
       targetPort: 8442  # Container port
-  type: NodePort
+  nodePort: 30080   # NodePort for external access
+  selector:
+    app: travel-api
+
+
 
 
