@@ -7,6 +7,8 @@
    
     <include file="/mnt/e/scrunch/DOCKEREXAMPLE/Task-9/New_folder/DML.sql" relativeToChangelogFile="true"/> 
     
+    <property name="url" value="jdbc:mysql://192.168.49.2:30080/travel_planner_e"/>
 
    
 </databaseChangeLog>        
+
