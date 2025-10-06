@@ -137,14 +137,14 @@ livenessProbe:
   httpGet:
     path: /api/getPackages
     port: 8442
-  initialDelaySeconds: 20
+  initialDelaySeconds: 60
   periodSeconds: 10
 
 readinessProbe:
   httpGet:
     path: /api/getPackages
     port: 8442
-  initialDelaySeconds: 20
+  initialDelaySeconds: 60
   periodSeconds: 10
 
 # This section is for setting up autoscaling more information can be found here: https://kubernetes.io/docs/concepts/workloads/autoscaling/
