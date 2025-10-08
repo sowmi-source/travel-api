@@ -54,8 +54,11 @@ service:
   # This sets the service type more information can be found here: https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types
   type: NodePort
   # This sets the ports more information can be found here: https://kubernetes.io/docs/concepts/services-networking/service/#field-spec-ports
-  port: 8442
+ 
   nodePort: 30080
+  port: 8442
+  targetPort: 8442
+ containerPort: 8442
 
 # This block is for setting up the ingress for more information can be found here: https://kubernetes.io/docs/concepts/services-networking/ingress/
 ingress:
@@ -67,7 +70,7 @@ ingress:
   hosts:
     - host: travel-api.test
       paths:
-        - path: /api/getPackages
+        - path: /api
           pathType: ImplementationSpecific
   tls: []
   #  - secretName: chart-example-tls
@@ -133,19 +136,27 @@ resources: {}
 #   httpGet:
 #     path: /
 #     port: 8442
+
 livenessProbe:
+  enabled: true
   httpGet:
     path: /api/getPackages
     port: 8442
   initialDelaySeconds: 60
   periodSeconds: 10
+  timeoutSeconds: 1
+  failureThreshold: 3
 
 readinessProbe:
+  enabled: true
   httpGet:
     path: /api/getPackages
     port: 8442
   initialDelaySeconds: 60
   periodSeconds: 10
+  timeoutSeconds: 1
+  failureThreshold: 3
+
 
 # This section is for setting up autoscaling more information can be found here: https://kubernetes.io/docs/concepts/workloads/autoscaling/
 autoscaling:
